@@ -1,0 +1,19 @@
+import HautevilleHouse.DiophantineInequalitiesCanonicalLaneLean.DiophantineForm
+import HautevilleHouse.DiophantineInequalitiesCanonicalLaneLean.HilbertInequality
+import HautevilleHouse.DiophantineInequalitiesCanonicalLaneLean.RothTheorem
+import HautevilleHouse.DiophantineInequalitiesCanonicalLaneLean.SchmidtSubspace
+import HautevilleHouse.DiophantineInequalitiesCanonicalLaneLean.ThueEquation
+import HautevilleHouse.DiophantineInequalitiesCanonicalLaneLean.EffectiveMordell
+
+namespace HautevilleHouse
+namespace DiophantineInequalitiesCanonicalLaneLean
+
+def ConstrainedDiophantineClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_diophantine_endgame (A : AdmissibleClass) :
+    ConstrainedDiophantineClosure A :=
+  And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end DiophantineInequalitiesCanonicalLaneLean
+end HautevilleHouse
